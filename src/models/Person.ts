@@ -17,7 +17,7 @@ const PersonSchema = new Schema(
     birthYear: Number,
     deathYear: Number,
     profession: [String],
-    knownFor: [{ type: Schema.Types.ObjectId, ref: Movie.name }]
+    knownFor: [{ type: Schema.Types.ObjectId, ref: 'Movie' }]
   },
   { timestamps: true }
 );
