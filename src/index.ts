@@ -17,7 +17,7 @@ connectDB();
 // routes
 app.use('/api/auth', authRoute)
 app.use('/api/movies', movieRoutes);
-app.use('/api/people', personRoutes);
+app.use('/api/person', personRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
