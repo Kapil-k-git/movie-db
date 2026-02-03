@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getMovieList, searchMovies } from '../controllers/movie.controller';
+import { searchMovies } from '../controllers/movie.controller';
+import { requireAuth } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-router.get('/', searchMovies);
-router.get('/list', getMovieList);
+router.get('/', requireAuth, searchMovies);
 
 export default router;

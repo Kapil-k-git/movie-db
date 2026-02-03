@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getPersonList, searchPeople } from '../controllers/person.controller';
+import { searchPeople } from '../controllers/person.controller';
+import { requireAuth } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-router.get('/', searchPeople);
-router.get('/list', getPersonList);
+router.get('/', requireAuth, searchPeople);
 
 export default router;
